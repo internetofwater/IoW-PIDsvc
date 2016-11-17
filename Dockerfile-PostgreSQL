@@ -1,1 +1,8 @@
 FROM postgres:latest
+RUN apt-get update
+RUN apt-get install -y wget
+RUN wget https://www.seegrid.csiro.au/subversion/PID/trunk/pidsvc/src/main/db/postgresql.sql
+USER postgres
+RUN postgres && psql -c "create user \"pidsvc-admin\" password 'apassword'"
+RUN postgres && createdb pidsvc -O pidsvc-admin
+RUN postgres && psql -d pidsvc -f postgresql.sql

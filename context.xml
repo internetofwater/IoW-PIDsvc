@@ -33,26 +33,26 @@
     <!--
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
-</Context>
-<Resource
-   name="jdbc/pidsvc"
-   auth="Container"
-   type="javax.sql.DataSource"
-   driverClassName="org.postgresql.Driver"
-   url="jdbc:postgresql://postgres:5432/pidsvc"
-   username="%USERNAME%"
-   password="%PASSWORD%"
-   maxActive="-1"
-   minIdle="0"
-   maxIdle="10"
-   maxWait="10000"
-   minEvictableIdleTimeMillis="300000"
-   timeBetweenEvictionRunsMillis="300000"
-   numTestsPerEvictionRun="20"
-   poolPreparedStatements="true"
-   maxOpenPreparedStatements="100"
-   testOnBorrow="true"
-   accessToUnderlyingConnectionAllowed="true"
-   validationQuery="SELECT VERSION();"
-/>
 
+    <Resource
+    name="jdbc/pidsvc"
+    auth="Container"
+    type="javax.sql.DataSource"
+    driverClassName="org.postgresql.Driver"
+    url="jdbc:postgresql://postgres:5432/pidsvc"
+    username="pidsvc-admin"
+    password="apassword"
+    maxActive="-1"
+    minIdle="0"
+    maxIdle="10"
+    maxWait="10000"
+    minEvictableIdleTimeMillis="300000"
+    timeBetweenEvictionRunsMillis="300000"
+    numTestsPerEvictionRun="20"
+    poolPreparedStatements="true"
+    maxOpenPreparedStatements="100"
+    testOnBorrow="true"
+    accessToUnderlyingConnectionAllowed="true"
+    validationQuery="SELECT VERSION();"
+    />
+</Context>

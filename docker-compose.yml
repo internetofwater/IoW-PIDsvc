@@ -2,7 +2,9 @@ version: '2'
 
 services:
         postgres:
-            image: postgres:latest
+            build:
+                context: .
+                dockerfile: Dockerfile-PostgreSQL
             network_mode: "bridge"
         tomcat:
             build:
