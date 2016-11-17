@@ -9,9 +9,10 @@ services:
                 context: .
                 dockerfile: Dockerfile-Tomcat
             links:
-                - postgres
+                - postgres:postgres
             ports:
                 - "8081:8080"
+            network_mode: "bridge"
 
         # dbl:
         #   build: ./dbl/
