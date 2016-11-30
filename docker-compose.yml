@@ -12,7 +12,7 @@ services:
         #     build:
         #         image: httpd
         #     network_mode: "bridge"
-        tomcat:
+        tomcat2:
             build:
                 context: .
                 dockerfile: Dockerfile-Tomcat
