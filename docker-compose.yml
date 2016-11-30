@@ -27,7 +27,7 @@ services:
                 context: .
                 dockerfile: Dockerfile-Apache
             links:
-                - tomcat:tomcat
+                - tomcat2:tomcat2
             ports:
                 - "8095:80"
             network_mode: "bridge"
