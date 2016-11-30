@@ -21,6 +21,9 @@ Current not implemented
 1. git clone [] to your Server
 2. docker-compose up
 
+## Accessing the web interface for managing and implementing redirects
+http://[host machine address]:8093/pidsvc
+
 ## PostgreSQL Backup
 Currently the db is mapped to /OSM/MEL/LW_OZNOME/pidsvc/PIDsvc_db which is backed up.  WARNING this will be the same for each deployment of the service.
 
