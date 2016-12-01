@@ -12,7 +12,7 @@ services:
         #     build:
         #         image: httpd
         #     network_mode: "bridge"
-        tomcat2:
+        tomcat3:
             build:
                 context: .
                 dockerfile: Dockerfile-Tomcat
@@ -27,7 +27,7 @@ services:
                 context: .
                 dockerfile: Dockerfile-Apache
             links:
-                - tomcat2:tomcat
+                - tomcat3:tomcat
             ports:
                 - "8095:80"
             network_mode: "bridge"

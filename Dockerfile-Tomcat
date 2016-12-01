@@ -9,3 +9,11 @@ ENV TOMCAT_HOME=/usr/local/tomcat/
 ENV HOSTNAME=localhost 
 ENV DEPLOYMENT_DIR=/usr/local/ 
 ENV PIDSVC_HOME=%TOMCAT_HOME%/webapps/pidsvc/ 
+
+# Add Tini
+ENV TINI_VERSION v0.13.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+ENTRYPOINT ["/tini", "--"]
+
+CMD ["catalina.sh", "run"]
