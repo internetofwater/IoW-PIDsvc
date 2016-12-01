@@ -20,7 +20,7 @@ services:
                 - postgres:postgres
             ports:
                 - "8096:8080"
-                - "8094:8009"
+                - "8097:8009"
             network_mode: "bridge"
         apache:
             build:
