@@ -19,7 +19,7 @@ services:
             links:
                 - postgres:postgres
             ports:
-                - "8093:8080"
+                - "8096:8080"
                 - "8094:8009"
             network_mode: "bridge"
         apache:
