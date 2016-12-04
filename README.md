@@ -14,16 +14,14 @@ Current not implemented
 ## LDAP Authentication
 Current not implemented
 
-## Apache HTTP Server Configuration
-Current not implemented
-
 ## Deployment
 1. git clone [] to your Server
-2. docker-compose up
+2. docker-compose build
+3. docker-compose up
 
 ## Accessing the web interface for managing and implementing redirects
-http://[host machine address]:8093/pidsvc
+Current test deployment is at http://lw.oznome.csiro.au:8095/pidsvc/
 
 ## PostgreSQL Backup
-Currently the db is mapped to /OSM/MEL/LW_OZNOME/pidsvc/PIDsvc_db which is backed up.  WARNING this will be the same for each deployment of the service.
+Currently the db is mapped to the host directory /OSM/MEL/LW_OZNOME/pidsvc/PIDsvc_db which is backed up.  If deploying on another machine this directory will need to be created.
 
