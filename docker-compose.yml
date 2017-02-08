@@ -6,12 +6,8 @@ services:
                 context: .
                 dockerfile: Dockerfile-PostgreSQL
             volumes:
-                - /OSM/MEL/LW_OZNOME/apps/PIDsvc/PIDsvc_db:/var/lib/postgresql/data
+                - /srv/OfLW/data/PIDsvc/:/var/lib/postgresql/data
             network_mode: "bridge"
-        # apache:
-        #     build:
-        #         image: httpd
-        #     network_mode: "bridge"
         tomcat3:
             build:
                 context: .
