@@ -15,13 +15,13 @@ Current not implemented
 Current not implemented
 
 ## Deployment
-1. git clone [] to your Server
+1. git clone [] to your Server (ubuntu 18.04 LTS)
 2. docker-compose build
 3. docker-compose up
 
 ## Accessing the web interface for managing and implementing redirects
-Current test deployment is at http://lw.oznome.csiro.au:8095/pidsvc/
+Current test deployment is at http://geoconnex.us:8096/pidsvc
 
 ## PostgreSQL Backup
-Currently the db is mapped to the host directory /OSM/MEL/LW_OZNOME/pidsvc/PIDsvc_db which is backed up.  If deploying on another machine this directory will need to be created.
+Currently the db is mapped to the host directory /srv/OfW/data/PIDsvc which is backed up.  This directory will need to be created before docker-compose can build the images properly
 
