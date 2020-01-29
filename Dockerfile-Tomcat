@@ -1,7 +1,7 @@
 FROM tomcat:8.0
 WORKDIR /usr/local/tomcat/webapps
-RUN wget https://cgsrv1.arrc.csiro.au/swrepo/PidService/jenkins/trunk/pidsvc-latest.war
-RUN mv pidsvc-latest.war pidsvc.war
+#RUN wget https://cgsrv1.arrc.csiro.au/swrepo/PidService/jenkins/trunk/pidsvc-latest.war
+RUN mv pidsvc-iow.war pidsvc.war
 WORKDIR /usr/local/tomcat/conf
 COPY ./context.xml .
 COPY ./tomcat-users.xml .
