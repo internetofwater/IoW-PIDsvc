@@ -4,6 +4,7 @@ RUN wget https://cgsrv1.arrc.csiro.au/swrepo/PidService/jenkins/trunk/pidsvc-lat
 RUN mv pidsvc-latest.war pidsvc.war
 WORKDIR /usr/local/tomcat/conf
 COPY ./context.xml .
+COPY ./tomcat-users.xml .
 COPY ./postgresql-9.4-1202.jdbc41.jar /usr/local/tomcat/lib
 ENV TOMCAT_HOME=/usr/local/tomcat/  
 ENV HOSTNAME=localhost 
