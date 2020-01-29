@@ -25,5 +25,5 @@ services:
             links:
                 - tomcat3
             ports:
-                - "8095:80"
+                - "80:80"
             network_mode: "bridge"
