@@ -4,7 +4,6 @@ RUN wget https://raw.githubusercontent.com/internetofwater/pidsvc-docker/master/
 RUN mv pidsvc-iow.war pidsvc.war
 WORKDIR /usr/local/tomcat/conf
 COPY ./context.xml .
-COPY ./tomcat-users.xml .
 COPY ./postgresql-9.4-1202.jdbc41.jar /usr/local/tomcat/lib
 ENV TOMCAT_HOME=/usr/local/tomcat/  
 ENV HOSTNAME=localhost 
