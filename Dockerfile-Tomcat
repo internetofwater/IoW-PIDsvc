@@ -1,7 +1,7 @@
 FROM tomcat:8.0
 WORKDIR /usr/local/tomcat/webapps
-RUN wget https://raw.githubusercontent.com/internetofwater/pidsvc-docker/master/pidsvc-iow.war
-RUN mv pidsvc-iow.war pidsvc.war
+RUN wget https://raw.githubusercontent.com/internetofwater/pidsvc-docker/master/pidsvc-latest.war
+RUN mv pidsvc-latest.war pidsvc.war
 WORKDIR /usr/local/tomcat/conf
 COPY ./context.xml .
 COPY ./postgresql-9.4-1202.jdbc41.jar /usr/local/tomcat/lib
