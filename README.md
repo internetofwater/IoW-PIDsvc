@@ -13,9 +13,11 @@ Basic Apache authentication implemented
 
 
 ## Deployment
-1. git clone [] to your Server (ubuntu 18.04 LTS)
-2. docker-compose build
-3. docker-compose up
+1. Install Docker
+2. Install Docker-Compose
+3. git clone [] to your Server (ubuntu 18.04 LTS)
+4. docker-compose build
+5. docker-compose up
 
 ## Accessing the web interface for managing and implementing redirects
 Current test deployment is at http://geoconnex.us/pidsvc
