@@ -9,10 +9,8 @@ https://www.seegrid.csiro.au/wiki/bin/view/SISS4BoM/PIDPrototypeSolution
 ![Simple architecture](https://www.seegrid.csiro.au/wiki/pub/Siss/PIDServiceUserGuide/Core_Principle_Activity_Diagram.png)
 
 ## Security Considerations
-Current not implemented
+Basic Apache authentication implemented
 
-## LDAP Authentication
-Current not implemented
 
 ## Deployment
 1. git clone [] to your Server (ubuntu 18.04 LTS)
@@ -20,7 +18,7 @@ Current not implemented
 3. docker-compose up
 
 ## Accessing the web interface for managing and implementing redirects
-Current test deployment is at http://geoconnex.us:8096/pidsvc
+Current test deployment is at http://geoconnex.us/pidsvc
 
 ## PostgreSQL Backup
 Currently the db is mapped to the host directory /srv/OfW/data/PIDsvc which is backed up.  This directory will need to be created before docker-compose can build the images properly
