@@ -23,5 +23,5 @@ Basic Apache authentication implemented
 Current test deployment is at http://geoconnex.us/pidsvc
 
 ## PostgreSQL Backup
-Currently the db is mapped to the host directory /srv/OfW/data/PIDsvc which is backed up.  This directory will need to be created before docker-compose can build the images properly
+Currently the db is mapped to the host directory /srv/OfW/data/PIDsvc which is backed up.  This directory will need to be created on the host machine before docker-compose can build the images properly
 
