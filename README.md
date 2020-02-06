@@ -12,16 +12,27 @@ https://www.seegrid.csiro.au/wiki/bin/view/SISS4BoM/PIDPrototypeSolution
 Basic Apache authentication implemented
 
 
-## Deployment
+# Deployment
 1. Install Docker
 2. Install Docker-Compose
 3. git clone [] to your Server (ubuntu 18.04 LTS)
 4. docker-compose build
 5. docker-compose up
-
-## Accessing the web interface for managing and implementing redirects
-Current test deployment is at http://geoconnex.us/pidsvc
+6. Pidsvc is deployed at http://localhost:8095
 
 ## PostgreSQL Backup
 Currently the db is mapped to the host directory /srv/OfW/data/PIDsvc which is backed up.  This directory will need to be created on the host machine before docker-compose can build the images properly
+
+## Accessing the web interface for managing and implementing redirects
+Current test deployment is at https://geoconnex.us/pidsvc
+
+
+## Optional: Enable https
+1. [Install Go](https://golang.org/doc/install)
+2. [Download caddy server source]()
+3. [Install caddy server]()
+4. Setup
+
+
+
 
