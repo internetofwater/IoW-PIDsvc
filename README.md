@@ -30,7 +30,7 @@ Current test deployment is at https://geoconnex.us/pidsvc
 1. [Install Go](https://golang.org/doc/install)
 2. [Download and extract a caddy server source tar.gz](https://github.com/caddyserver/caddy/releases)
 3. [Manual Install caddy server for Linux](https://caddyserver.com/docs/install)
-4. caddy reverse-proxy --from <domain-name>.<top-level-domain> --to <private ip address>:8095
+4. caddy reverse-proxy --from your-domain-name.top-level-domain --to private-ip-address:8095
 
 ## Optional: Security
 1.
