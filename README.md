@@ -51,21 +51,20 @@ The most straightforward way to serve the PID service over https is to set up a 
 6. caddy reverse-proxy --from example.com --to localhost.IP.address:8095
 
 ## Optional: Security
-1.
-2.
+1. BasicAuth implemented on virtual host, with password hashes stored on server
 
 # API Request Templates
 
 ## Batch import
 Import an xml file of 1:1 mappings located at path/<whatever-import-file-name.xml>. Note, any mappings for paths already registered will be overwritten by default.
 ```
-curl https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F "source=@<path>/import-file.xml" -H "Content-Type: multipart/mixed" 
+curl --user [name]:[password] https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F "source=@<path>/import-file.xml" -H "Content-Type: multipart/mixed" 
 ```
 
 ## Delete individual mapping
 Delete a mapping for /path/subpath/endofpath. Note that this does not actually delete the mapping but deprecates and inactivates it. Full version histories are kept in the persistent data store.
 ```
-curl https://geoconnex.us/pidsvc/controller?cmd=delete_mapping -d "mapping_path=/path/subpath/endofpath" -X POST
+curl --user [name]:[password] https://geoconnex.us/pidsvc/controller?cmd=delete_mapping -d "mapping_path=/path/subpath/endofpath" -X POST
 ```
 
 
