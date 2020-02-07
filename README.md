@@ -1,5 +1,5 @@
 # Persistent Identifier Service (PID Service)
-This is a deployment system using docker for the PIDsvc https://www.seegrid.csiro.au/wiki/Siss/PIDService#Prerequisites
+This is a deployment system using docker for the PIDsvc developed bhy CSIRO. https://www.seegrid.csiro.au/wiki/Siss/PIDService#Prerequisites
 
 1. [Overview](#overview)
 2. [Deployment](#deployment)
@@ -7,7 +7,8 @@ This is a deployment system using docker for the PIDsvc https://www.seegrid.csir
 ⋅⋅* [Batch import](#batch-import) 
 
 # Overview
-Persistent Identifier Service (PID Service) enables resolution of persistent identifiers. The proposed solution is using an approach to intercept all incoming HTTP requests at the Apache HTTP web server level and pass it through to the PID Service dispatcher servlet that implements a logic to recognise a pattern of an incoming request and compare it with one of the patterns configured in the PID Service and stored in a persistent relational data store (e.g. PostgreSQL) and then performs a set of user-defined actions, such as, HTTP header manipulation, redirects, proxying requests, delegating resolution to another service, etc. It features extendable architecture for future improvements and supports multiple control interfaces - visual user interface (UI) as well as programmable API for remote user-less management of URI mapping rules.
+The Persistent Identifier Service (PID Service) enables resolution of persistent identifiers. All incoming HTTP requests are intercepted by an Apache HTTP web server level and passed to a dispatcher servlet that matches a pattern of an incoming request and compares it with the patterns configured in the PID Service and stored in a persistent relational data store (e.g. PostgreSQL) and then performs a set of user-defined actions, such as, HTTP header manipulation, redirects, proxying requests, delegating resolution to another service, etc. It features extendable architecture for future improvements and supports multiple control interfaces - visual user interface (UI) as well as programmable API for remote user-less management of URI mapping rules.
+
 Implementation has taken into account findings, requirements and observations discovered during technology review and prototype implementation phases that immediately preceded implementation of the PID Service:
 https://www.seegrid.csiro.au/wiki/bin/view/SISS4BoM/PIDTechnologyReview
 https://www.seegrid.csiro.au/wiki/bin/view/SISS4BoM/PIDPrototypeSolution
