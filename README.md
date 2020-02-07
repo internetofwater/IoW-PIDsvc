@@ -58,13 +58,13 @@ The most straightforward way to serve the PID service over https is to set up a 
 ## Batch import
 Import an xml file of 1:1 mappings. Note, any mappings for paths already registered will be overwritten by default.
 ```
-curl https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F "source=@path/import-file.xml" -H "Content-Type: multipart/mixed" 
+curl https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F "source=@<path>/import-file.xml" -H "Content-Type: multipart/mixed" 
 ```
 
 ## Delete individual mapping
-Delete a mapping for /path/subpath/endofpath
+Delete a mapping for /path/subpath/endofpath. Note that this does not actually delete the mapping but deprecates and inactivates it. Full version histories are kept in the persistent data store.
 ```
-curl https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F /pidsvc/controller?cmd=delete_mapping&mapping_path=%2Fpath%2Fsubpath%2Fendofpath
+curl https://geoconnex.us/pidsvc/controller?cmd=delete_mapping -d "mapping_path=/path/subpath/endofpath" -X POST
 ```
 
 
