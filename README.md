@@ -4,9 +4,8 @@ This is a deployment system using docker for the PIDsvc developed bhy CSIRO. htt
 1. [Overview](#overview)
 2. [Deployment](#deployment)
 3. [API Request Templates](#api-request-templates)
-
-  * [Batch import](#batch-import) 
-  * [Delete individual mapping](#delete-individual-mapping) 
+* [Batch import](#batch-import) 
+* [Delete individual mapping](#delete-individual-mapping) 
 
 # Overview
 The Persistent Identifier Service (PID Service) enables resolution of persistent identifiers. All incoming HTTP requests are intercepted by an Apache HTTP web server level and passed to a dispatcher servlet that matches a pattern of an incoming request and compares it with the patterns configured in the PID Service and stored in a persistent relational data store (e.g. PostgreSQL) and then performs a set of user-defined actions, such as, HTTP header manipulation, redirects, proxying requests, delegating resolution to another service, etc. It features extendable architecture for future improvements and supports multiple control interfaces - visual user interface (UI) as well as programmable API for remote user-less management of URI mapping rules.
