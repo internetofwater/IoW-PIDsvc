@@ -60,4 +60,9 @@ Import an xml file of 1:1 mappings
 curl https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F "source=@path/import-file.xml" -H "Content-Type: multipart/mixed" 
 ```
 
+Delete a mapping at /path/subpath/endofpath
+```
+curl https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F /pidsvc/controller?cmd=delete_mapping&mapping_path=%2Fpath%2Fsubpath%2Fendofpath
+```
+
 
