@@ -29,10 +29,19 @@ Current test deployment is at https://geoconnex.us/pidsvc
 
 
 ## Optional: Enable https
+
+The most straightforward way to serve the PID service over https is to set up a reverse proxy that routes all https traffic coming through port 443 to the "backend service" running on the tomcat docker image on port 8095, and redirects all http traffic coming through port 80 to port 443. The simplest way to do this is with the [Caddy server](https://caddyserver.com/docs/), which by default provisions and renews free SSL certificates from [letsencrypt.org](letsencrypt.org).
+
+### Caddy can be built from source using the Go language.
+
 1. [Install Go](https://golang.org/doc/install)
-2. [Download and extract a caddy server source tar.gz](https://github.com/caddyserver/caddy/releases)
-3. [Manual Install caddy server for Linux](https://caddyserver.com/docs/install)
-4. caddy reverse-proxy --from your-domain-name.top-level-domain --to private-ip-address:8095
+2. git clone -b v2 "https://github.com/caddyserver/caddy.git"
+3. cd caddy/cmd/caddy/
+
+### Installing and configuring Caddy is simple once built
+4. go build
+5. [Manual Install caddy server for Linux](https://caddyserver.com/docs/install)
+6. caddy reverse-proxy --from example.com --to localhost.IP.address:8095
 
 ## Optional: Security
 1.
