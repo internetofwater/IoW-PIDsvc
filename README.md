@@ -56,7 +56,7 @@ The most straightforward way to serve the PID service over https is to set up a 
 # API Request Templates
 
 ## Batch import
-Import an xml file of 1:1 mappings. Note, any mappings for paths already registered will be overwritten by default.
+Import an xml file of 1:1 mappings located at path/<whatever-import-file-name.xml>. Note, any mappings for paths already registered will be overwritten by default.
 ```
 curl https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F "source=@<path>/import-file.xml" -H "Content-Type: multipart/mixed" 
 ```
