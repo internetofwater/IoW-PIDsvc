@@ -4,7 +4,8 @@ This is a deployment system using docker for the PIDsvc developed bhy CSIRO. htt
 1. [Overview](#overview)
 2. [Deployment](#deployment)
 3. [API Request Templates](#api-request-templates)
-* [Batch import](#batch-import) 
+* [Batch import](#batch-import-via-xml-file) 
+* [Configure individual 1:1 mapping](#configure-individual-mapping)
 * [Delete individual mapping](#delete-individual-mapping) 
 
 # Overview
@@ -55,11 +56,14 @@ The most straightforward way to serve the PID service over https is to set up a 
 
 # API Request Templates
 
-## Batch import
+## Batch import via xml file
 Import an xml file of 1:1 mappings located at path/<whatever-import-file-name.xml>. Note, any mappings for paths already registered will be overwritten by default.
 ```
 curl --user [name]:[password] https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F "source=@<path>/import-file.xml" -H "Content-Type: multipart/mixed" 
 ```
+## Configure individual mapping
+
+
 
 ## Delete individual mapping
 Delete a mapping for /path/subpath/endofpath. Note that this does not actually delete the mapping but deprecates and inactivates it. Full version histories are kept in the persistent data store.
