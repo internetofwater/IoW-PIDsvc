@@ -5,6 +5,8 @@ This is a deployment system using docker for the PIDsvc https://www.seegrid.csir
 
 [Deployment](#deployment)
 
+[API Request Templates](#api-test-templates)
+
 ## Overview
 Persistent Identifier Service (PID Service) enables resolution of persistent identifiers. The proposed solution is using an approach to intercept all incoming HTTP requests at the Apache HTTP web server level and pass it through to the PID Service dispatcher servlet that implements a logic to recognise a pattern of an incoming request and compare it with one of the patterns configured in the PID Service and stored in a persistent relational data store (e.g. PostgreSQL) and then performs a set of user-defined actions, such as, HTTP header manipulation, redirects, proxying requests, delegating resolution to another service, etc. It features extendable architecture for future improvements and supports multiple control interfaces - visual user interface (UI) as well as programmable API for remote user-less management of URI mapping rules.
 Implementation has taken into account findings, requirements and observations discovered during technology review and prototype implementation phases that immediately preceded implementation of the PID Service:
@@ -51,6 +53,11 @@ The most straightforward way to serve the PID service over https is to set up a 
 1.
 2.
 
+# API Request Templates
 
+Import an xml file of 1:1 mappings
+```
+curl https://geoconnex.us/pidsvc/controller?cmd=import -X POST -F "source=@path/import-file.xml" -H "Content-Type: multipart/mixed" 
+```
 
 
