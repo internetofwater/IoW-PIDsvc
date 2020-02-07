@@ -37,9 +37,9 @@ The most straightforward way to serve the PID service over https is to set up a 
 1. [Install Go](https://golang.org/doc/install)
 2. git clone -b v2 "https://github.com/caddyserver/caddy.git"
 3. cd caddy/cmd/caddy/
+4. go build
 
 ### Installing and configuring Caddy is simple once built
-4. go build
 5. [Manual Install caddy server for Linux](https://caddyserver.com/docs/install)
 6. caddy reverse-proxy --from example.com --to localhost.IP.address:8095
 
