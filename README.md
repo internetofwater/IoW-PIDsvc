@@ -66,11 +66,11 @@ curl --user [name]:[password] https://geoconnex.us/pidsvc/controller?cmd=import 
 
 ### Using R
 ```
-#Required libraries
-library(curl)
-library(mime)
-library(openssl)
-library(R6)
+#Required libraries (httr imports the others when installed)
+#library(curl)
+# library(mime)
+# library(openssl)
+# library(R6)
 library(httr) 
 
 #URL of API endpoint + command
@@ -80,7 +80,7 @@ url<-"https://geoconnex.us/pidsvc/controller?cmd=import"
 body <- list(y = upload_file("<path>/import-file.xml",type="text/xml")) 
 
 #POST with authentication and appropriate header
-x<-POST(url, body=body, authenticate("iow","nieps","any"), add_headers("Content-Type" = "multipart/mixed")) 
+x<-POST(url, body=body, authenticate("user","password"), add_headers("Content-Type" = "multipart/mixed")) 
 ```
 
 ### Using Python
