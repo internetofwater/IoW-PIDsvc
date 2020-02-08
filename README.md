@@ -1,5 +1,5 @@
 # Persistent Identifier Service (PID Service)
-This is a deployment system using docker for the PIDsvc developed bhy CSIRO. https://www.seegrid.csiro.au/wiki/Siss/PIDService#Prerequisites
+This is a deployment system using docker for the PIDsvc developed by CSIRO. https://www.seegrid.csiro.au/wiki/Siss/PIDService#Prerequisites
 
 1. [Overview](#overview)
 2. [Deployment](#deployment)
@@ -101,7 +101,7 @@ library(httr)
 url<-"https://geoconnex.us/pidsvc/controller?cmd=delete_mapping" 
 
 #specify the individual path to be deleted
-body <- list(mapping_path="/APItest") 
+body <- list(mapping_path="/namespace/path/endofpath") 
 
 #POST with authentication 
 x<-POST(url, body=body, authenticate("user","password"), encode="form") 
