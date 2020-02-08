@@ -52,7 +52,7 @@ The most straightforward way to serve the PID service over https is to set up a 
 6. caddy reverse-proxy --from example.com --to localhost.IP.address:8095
 
 ## Optional: Security
-1. BasicAuth implemented on virtual host, with password hashes stored on server
+1. BasicAuth implemented on virtual host, with password hashes stored on server. When BasicAuth is enabled, the GUI import/restore feature does not work. Long term, this either needs to be fixed or in production all batch mappings need to be done through the API by an authorized user/ machine.
 
 # API Request Templates
 
@@ -65,6 +65,23 @@ curl --user [name]:[password] https://geoconnex.us/pidsvc/controller?cmd=import 
 ```
 
 ### Using R
+```
+#Required libraries
+library(curl)
+library(mime)
+library(openssl)
+library(R6)
+library(httr) 
+
+#URL of API endpoint + command
+url<-"https://geoconnex.us/pidsvc/controller?cmd=import" 
+
+#set path to xml code desired
+body <- list(y = upload_file("<path>/import-file.xml",type="text/xml")) 
+
+#POST with authentication and appropriate header
+x<-POST(url, body=body, authenticate("iow","nieps","any"), add_headers("Content-Type" = "multipart/mixed")) 
+```
 
 ### Using Python
 
