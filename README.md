@@ -55,7 +55,7 @@ The most straightforward way to serve the PID service over https is to set up a 
 # API Request Templates
 
 ## Batch import via xml file
-Import an xml file of 1:1 mappings located at path/<whatever-import-file-name.xml>. Note, any mappings for paths already registered will be overwritten by default.
+Import an xml file of 1:1 mappings located at path/<import-file.xml>. Note, any mappings for paths already registered will be overwritten by default.
 
 ### Using shell/ curl
 ```
@@ -64,25 +64,30 @@ curl --user [name]:[password] https://geoconnex.us/pidsvc/controller?cmd=import 
 
 ### Using R
 ```
-#Required libraries (httr imports the others when installed)
-# library(curl)
-# library(mime)
-# library(openssl)
-# library(R6)
-library(httr) 
+library(httr)
 
-#URL of API endpoint + command
-url<-"https://geoconnex.us/pidsvc/controller?cmd=import" 
+# URL of API endpoint + command
+api <- "https://geoconnex.us/pidsvc/controller?cmd=import"
 
-#set path to xml code desired
-body <- list(y = upload_file("<path>/import-file.xml",type="text/xml")) 
+# set path to xml code desired
+payload <- list(y = upload_file("<path>/import-file.xml", type = "text/xml"))
 
-#POST with authentication and appropriate header
-x<-POST(url, body=body, authenticate("user","password"), add_headers("Content-Type" = "multipart/mixed")) 
+# POST with authentication and appropriate header
+x <- POST(api, body = payload, authenticate("user", "password"), add_headers("Content-Type" = "multipart/mixed"))
 ```
 
 ### Using Python
+```
+import requests
 
+#URL of API endpoint + command
+api = 'https://geoconnex.us/pidsvc/controller?cmd=import'
+
+#POST the file with authentication
+with open('<path>/import-file.xml') as f:
+    r = requests.post(api, files={'<path>/import-file.xml': f}, auth=('user','password'))
+
+```
 
 
 ## Delete individual mapping
@@ -95,16 +100,29 @@ curl --user [name]:[password] https://geoconnex.us/pidsvc/controller?cmd=delete_
 
 ### Using R
 ```
-library(httr) 
+library(httr)
 
-#URL of API endpoint + command
-url<-"https://geoconnex.us/pidsvc/controller?cmd=delete_mapping" 
+# URL of API endpoint + command
+api <- "https://geoconnex.us/pidsvc/controller?cmd=delete_mapping"
 
-#specify the individual path to be deleted
-body <- list(mapping_path="/APItest") 
+# specify the individual path to be deleted
+payload <- list(mapping_path = "/namespace/path/endofpath")
 
-#POST with authentication 
-x<-POST(url, body=body, authenticate("user","password"), encode="form") 
+# POST with authentication
+x <- POST(api, body = payload, authenticate("user", "password"), encode = "form")
 ```
 
 ### Using Python
+```
+import requests
+
+#URL of API endpoint + command
+api ='https://geoconnex.us/pidsvc/controller?cmd=delete_mapping'
+
+#specify the individual path to be deleted
+payload = {'mapping_path':'/namespace/path/endofpath'}
+
+#POST with authentication
+r = requests.post(api, data = payload, auth=('user','password'))
+
+```
