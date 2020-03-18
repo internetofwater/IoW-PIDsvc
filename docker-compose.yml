@@ -9,7 +9,7 @@ services:
                 - /srv/pid/data/PIDsvc/:/var/lib/postgresql/data
             network_mode: "bridge"
             environment:
-               POSTGRES_USER: pidsvc-admin
+               POSTGRES_USER: admin
                POSTGRES_PASSWORD: apassword
         tomcat3:
             build:
