@@ -23,12 +23,10 @@ This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space
 1. [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 2. [Install Docker-Compose](https://docs.docker.com/compose/install/)
 3. git clone [] to your Server (ubuntu 18.04 LTS)
+4. create directory /srv/pid/data/PIDsvc for backup of database
 4. docker-compose build
 5. docker-compose up
 6. Pidsvc is deployed at http://localhost:8095
-
-## PostgreSQL Backup
-Currently the persistent data store backup is mapped to the host directory /srv/OfW/data/PIDsvc which is backed up.  This directory will need to be created on the host machine before docker-compose can build the images properly
 
 ## Accessing the web GUI for managing and implementing redirects
 Current test deployment is at https://geoconnex.us/pidsvc
@@ -51,6 +49,8 @@ The most straightforward way to serve the PID service over https is to set up a 
 
 ## Optional: Security
 1. BasicAuth implemented on virtual host, with password hashes stored on server. When BasicAuth is enabled, the GUI import/restore feature does not work. Long term, this either needs to be fixed or in production all batch mappings need to be done through the API by an authorized user/ machine.
+  * Password hashes to be stored in this configuration in /apache/.htpasswd
+  * In apache/httpd-vhosts.conf, the allowed users need to be added to the ```Require user``` directive
 
 # API Request Templates
 
