@@ -6,8 +6,11 @@ services:
                 context: .
                 dockerfile: Dockerfile-PostgreSQL
             volumes:
-                - /srv/OfLW/data/PIDsvc/:/var/lib/postgresql/data
+                - /srv/pid/data/PIDsvc/:/var/lib/postgresql/data
             network_mode: "bridge"
+            environment:
+               POSTGRES_USER: pidsvc-admin
+               POSTGRES_PASSWORD: apassword
         tomcat3:
             build:
                 context: .
