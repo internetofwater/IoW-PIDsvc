@@ -10,7 +10,7 @@ services:
             network_mode: "bridge"
             environment:
                POSTGRES_USER: admin
-               POSTGRES_PASSWORD: apassword
+               POSTGRES_PASSWORD: changethispassword
         tomcat3:
             build:
                 context: .
