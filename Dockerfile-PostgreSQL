@@ -2,5 +2,5 @@ FROM postgres:latest
 RUN mkdir -p /docker-entrypoint-initdb.d 
 RUN apt-get update
 RUN apt-get install -y wget
-RUN wget https://raw.githubusercontent.com/internetofwater/pidsvc-docker/master/postgresql.sql
+COPY ./postresql.sql /docker-entrypoint-initdb.d/
 COPY ./postgres-init.sh /docker-entrypoint-initdb.d/
