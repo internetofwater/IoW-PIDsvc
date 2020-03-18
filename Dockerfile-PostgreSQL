@@ -1,4 +1,4 @@
-FROM postgres:9.6
+FROM postgres:11
 RUN mkdir -p /docker-entrypoint-initdb.d 
 RUN apt-get update
 RUN apt-get install -y wget
