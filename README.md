@@ -25,7 +25,7 @@ This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space
 3. git clone [] to your Server (ubuntu 18.04 LTS)
 4. create directory /srv/pid/data/PIDsvc for backup of database
 4. docker-compose build
-5. docker-compose up
+5. docker-compose up --scale tomcat3=3 # canset tomcat3=n, where n is number of instances desired for apache to load balance to over docker internal round-robin DNS
 6. Pidsvc is deployed at http://localhost:8095
 
 ## Accessing the web GUI for managing and implementing redirects
