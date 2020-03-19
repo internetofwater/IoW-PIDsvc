@@ -14,7 +14,7 @@ Implementation has taken into account findings, requirements and observations di
 https://www.seegrid.csiro.au/wiki/bin/view/SISS4BoM/PIDTechnologyReview
 https://www.seegrid.csiro.au/wiki/bin/view/SISS4BoM/PIDPrototypeSolution
 
-
+This docker configuration includes 3 images: a postgres database, tomcat (with a pidsvc .war for the dispatcher, API, and user interface) and apache2 as a request interceptor and load balancer. It is designed to easily allow deployment of the PIDsvc, including with load balancing for greater scalability. Scaled to 5 replicas, it has been tested to drop less than 20 of 1,000,000 requests made over 160 minutes (~1000/s).
 
 
 # Deployment
@@ -25,7 +25,7 @@ This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space
 3. ```git clone []``` to your Server (ubuntu 18.04 LTS)
 4. create directory /srv/pid/data/PIDsvc for backup of database
 4. ```docker-compose build```
-5. ```docker-compose up --scale tomcat3=3```  can set tomcat3=n, where n is number of pidsvc instances desired for apache to load balance to over docker internal round-robin DNS
+5. ```docker-compose up --scale tomcat3=5``` One can set tomcat3=n, where n is number of pidsvc instances desired for apache to load balance to over docker internal round-robin DNS
 6. Pidsvc is deployed at http://localhost:8095
 
 ## Accessing the web GUI for managing and implementing redirects
