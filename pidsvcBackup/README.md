@@ -11,3 +11,12 @@ The package imports only the `xml2` package. This dependency may be removed in t
 ```
 write_xml("input_file_path.csv", "output_file_path.xml")
 ```
+
+
+```
+docker build -t pidsvcbackup:v0.1.0 .
+docker run --mount type=bind,source="$(pwd)",target="/temp/" \
+  pidsvcbackup:v0.1.0  \
+  R -e "pidsvcBackup::write_xml('/temp/pidsvcBackup/tests/testthat/data/example_ids.csv', '/temp/example_ids.xml')"
+````
+
