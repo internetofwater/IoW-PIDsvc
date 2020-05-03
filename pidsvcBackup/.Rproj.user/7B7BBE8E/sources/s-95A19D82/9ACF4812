@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1588530055126.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2597919553",
+    "id" : "9ACF4812",
+    "lastKnownWriteTime" : 1588299222,
+    "last_content_update" : 1588299222,
+    "path" : "~/Box/Internet Of Water/GitHub/geoconnex.us/pidsvcBackup/man/write_xml.Rd",
+    "project_path" : "man/write_xml.Rd",
+    "properties" : {
+    },
+    "read_only" : true,
+    "read_only_alternatives" : [
+        "R/write_xml.R"
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}
