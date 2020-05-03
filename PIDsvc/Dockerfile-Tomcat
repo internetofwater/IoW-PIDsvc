@@ -1,6 +1,6 @@
 FROM tomcat:8.0
 WORKDIR /usr/local/tomcat/webapps
-RUN wget https://raw.githubusercontent.com/internetofwater/pidsvc-docker/master/pidsvc-latest.war
+RUN wget https://raw.githubusercontent.com/internetofwater/IoW-PIDsvc/master/PIDsvc/pidsvc-latest.war
 RUN mv pidsvc-latest.war pidsvc.war
 WORKDIR /usr/local/tomcat/conf
 COPY ./context.xml .

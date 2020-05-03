@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1588528718543.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B1972177",
+    "lastKnownWriteTime" : 1588299222,
+    "last_content_update" : 1588299222,
+    "path" : "~/Box/Internet Of Water/GitHub/geoconnex.us/pidsvcBackup/R/make_mapping.R",
+    "project_path" : "R/make_mapping.R",
+    "properties" : {
+        "cursorPosition" : "34,0",
+        "scrollLine" : "10"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

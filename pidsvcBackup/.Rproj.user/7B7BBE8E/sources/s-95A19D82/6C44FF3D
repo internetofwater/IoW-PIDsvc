@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1588530078409.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4009942209",
+    "id" : "6C44FF3D",
+    "lastKnownWriteTime" : 1588299222,
+    "last_content_update" : 1588299222,
+    "path" : "~/Box/Internet Of Water/GitHub/geoconnex.us/pidsvcBackup/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+    },
+    "read_only" : true,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}
