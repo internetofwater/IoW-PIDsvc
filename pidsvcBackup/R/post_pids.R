@@ -10,6 +10,5 @@
 post_pids <- function(in_f, user, password, root = "https://geoconnex.us") {
   api <- paste0(root,"/pidsvc/controller?cmd=import")
   payload <- list(y=httr::upload_file(in_f, type="text/xml"))
-  x <- httr::POST(api, body = payload, authenticate(user,password), encode=c("multipart"))
-  return(str(content(x)))
+  x <- httr::POST(api, body = payload, httr::authenticate(user,password), encode=c("multipart"))
 }

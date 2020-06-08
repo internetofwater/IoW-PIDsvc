@@ -15,7 +15,7 @@ write_xml("input_file_path.csv", "output_file_path.xml")
 `post_pids` takes a PID server URL, a file path to an xml file produced by write_xml, a user and password, and POSTs the xml PID mappings to the PIDsvc.
 
 ```
-post_pids("https://geoconnex.us","input_file_path.xml","user","password")
+post_pids(root="https://geoconnex.us","input_file_path.xml","user","password")
 ```
 
 
