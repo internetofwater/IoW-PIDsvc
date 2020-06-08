@@ -73,7 +73,7 @@ api <- "https://geoconnex.us/pidsvc/controller?cmd=import"
 payload <- list(y = upload_file("<path>/import-file.xml", type = "text/xml"))
 
 # POST with authentication and appropriate header
-x <- POST(api, body = payload, authenticate("user", "password"), add_headers("Content-Type" = "multipart/mixed"))
+x <- POST(api, body = payload, authenticate("user", "password"), encode = c("multipart"))
 ```
 
 ### Using Python
