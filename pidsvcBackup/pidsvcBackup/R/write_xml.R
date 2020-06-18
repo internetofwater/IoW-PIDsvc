@@ -13,7 +13,7 @@ write_xml <- function(in_f, out_f, root = "https://geoconnex.us") {
   if(is(in_d, "try-error")) stop("must pass a file compatible with read.csv or sf::read_sf")
 
   if(is(in_d, "sf")) in_d <- sf::st_drop_geometry(in_d)
-
+  #in_d$decription<-"description"
   out_xml <- lapply(seq_len(nrow(in_d)), function(i, in_d) {
 
     r <- in_d[i, ]
