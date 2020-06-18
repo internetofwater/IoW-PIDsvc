@@ -11,3 +11,4 @@ post_pids <- function(pid, user, password, root = "https://geoconnex.us") {
   api <- paste0(root,"/pidsvc/controller?cmd=delete_mapping")
   payload <- list(mapping_path=gsub(root,"",pid))
   x <- httr::POST(api, body = payload, httr::authenticate(user,password), encode=c("form"))
+}
