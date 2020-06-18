@@ -3,3 +3,7 @@
 export(post_pids)
 export(retire_pid)
 export(write_xml)
+importFrom(methods,is)
+importFrom(sf,read_sf)
+importFrom(sf,st_drop_geometry)
+importFrom(utils,read.csv)
