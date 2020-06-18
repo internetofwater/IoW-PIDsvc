@@ -4,15 +4,18 @@
 #' @param in_f character path to input file
 #' @param out_f character path to output file
 #' @param root character URI of PID service root
+#' @importFrom utils read.csv
+#' @importFrom sf read_sf st_drop_geometry
+#' @importFrom methods is
 #' @return returns out file path invisibly
 #' @export
 write_xml <- function(in_f, out_f, root = "https://geoconnex.us") {
   in_d <- try(read.csv(in_f, stringsAsFactors = FALSE), silent = TRUE)
-  if(is(in_d, "try-error")) in_d <- try(sf::read_sf(in_f), silent = TRUE)
+  if(is(in_d, "try-error")) in_d <- try(read_sf(in_f), silent = TRUE)
 
   if(is(in_d, "try-error")) stop("must pass a file compatible with read.csv or sf::read_sf")
 
-  if(is(in_d, "sf")) in_d <- sf::st_drop_geometry(in_d)
+  if(is(in_d, "sf")) in_d <- st_drop_geometry(in_d)
 
   out_xml <- lapply(seq_len(nrow(in_d)), function(i, in_d) {
 
