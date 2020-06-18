@@ -1,6 +1,6 @@
-#' POST PIDsvc XML Backup to PIDsvc
-#' @description Given an input file xml, PID server URL and authentication 
-#' will upload will upload mappings to a PID Service.
+#' POST PIDsvc delete_mapping request
+#' @description Given a PID, PID server URL and authentication 
+#' will retire PID in a PID Service.
 #' @param pid character string for the full pid to be retired
 #' @param user character username for PID service
 #' @param password character password for PID service
