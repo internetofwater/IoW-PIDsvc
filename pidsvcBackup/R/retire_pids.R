@@ -7,7 +7,7 @@
 #' @param root character URI of PID service root
 #' @return returns PIDsvc HTTP POST response
 #' @export
-post_pids <- function(pid, user, password, root = "https://geoconnex.us") {
+retire_pids <- function(pid, user, password, root = "https://geoconnex.us") {
   api <- paste0(root,"/pidsvc/controller?cmd=delete_mapping")
   payload <- list(mapping_path=gsub(root,"",pid))
   x <- httr::POST(api, body = payload, httr::authenticate(user,password), encode=c("form"))
