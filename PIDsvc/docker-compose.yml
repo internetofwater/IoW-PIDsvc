@@ -6,9 +6,6 @@ services:
                 dockerfile: Dockerfile-PostgreSQL
             volumes:
                 - /srv/pid/data/PIDsvc/:/var/lib/postgresql/data
-            environment:
-               POSTGRES_USER: admin
-               POSTGRES_PASSWORD: changethispassword
         tomcat3:
             build:
                 context: .
