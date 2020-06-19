@@ -4,4 +4,4 @@ This is a suite of tools to manage persistent identifiers and redirects based on
 
 The [PIDsvc](PIDsvc) directory has a compiled PIDsvc .war file as well as dockerization scripts and documentation for the PIDsvc API.
 
-The [pidsvcBackup](pidsvcBackup) directory contains an R package for converting csv and geoJSON files into xml files that can be POSTed to the PIDsvc for minting persistent identifiers and their redirects. 
+The [pidsvcBackup](pidsvcBackup) directory contains an R client for the PIDsvc API for managing persistent identifiers and their redirects. 
