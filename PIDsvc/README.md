@@ -23,7 +23,8 @@ This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space
 1. [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 2. [Install Docker-Compose](https://docs.docker.com/compose/install/)
 3. ```git clone []``` to your Server (ubuntu 18.04 LTS)
-4. create directory /srv/pid/data/PIDsvc for backup of database
+4. Change ```POSTGRES_USER```in docker-compose ```environment:``` AND ```username``` in ```context.xml``` to your desired preference
+5. Change ```POSTGRES_PASSWORD```in docker-compose ```environment:``` AND ```password``` in ```context.xml``` to your desired preference
 4. ```docker-compose build```
 5. ```docker-compose up --scale tomcat3=5``` One can set tomcat3=n, where n is number of pidsvc instances desired for apache to load balance to over docker internal round-robin DNS
 6. Pidsvc is deployed at http://localhost:8095
@@ -36,16 +37,9 @@ Current test deployment is at https://geoconnex.us/pidsvc
 
 The most straightforward way to serve the PID service over https is to set up a reverse proxy that routes all https traffic coming through port 443 to the "backend service" running on the tomcat docker image on port 8095, and redirects all http traffic coming through port 80 to port 443. The simplest way to do this is with the [Caddy server](https://caddyserver.com/docs/), which by default provisions and renews free SSL certificates from [letsencrypt.org](https://letsencrypt.org).
 
-### Caddy can be built from source using the Go language.
-
-1. [Install Go](https://golang.org/doc/install)
-2. git clone -b v2 "https://github.com/caddyserver/caddy.git"
-3. cd caddy/cmd/caddy/
-4. go build
-
-### Installing and configuring Caddy is simple once built
-5. [Manual Install caddy server for Linux](https://caddyserver.com/docs/install)
-6. caddy reverse-proxy --from example.com --to localhost.IP.address:8095
+### Installing and configuring Caddy is simple 
+1. [Manual Install caddy server for Linux](https://caddyserver.com/docs/install)
+2. caddy reverse-proxy --from example.com --to localhost.IP.address:8095
 
 ## Optional: Security
 1. BasicAuth implemented on virtual host, with password hashes stored on server. When BasicAuth is enabled, the GUI import/restore feature does not work. Long term, this either needs to be fixed or in production all batch mappings need to be done through the API by an authorized user/ machine.
