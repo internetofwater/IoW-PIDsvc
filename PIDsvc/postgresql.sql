@@ -1,4 +1,4 @@
-
+/*
 -- Database: pidsvc
 -- DROP DATABASE pidsvc;
 CREATE DATABASE "pidsvc"
@@ -9,8 +9,8 @@ CREATE DATABASE "pidsvc"
        LC_CTYPE = 'en_AU.UTF-8'
        CONNECTION LIMIT = -1;
 CREATE LANGUAGE plpgsql;
-
-
+*/
+/*
 DROP TABLE configuration CASCADE;
 DROP TABLE mapping_type CASCADE;
 DROP TABLE condition_type CASCADE;
@@ -25,7 +25,7 @@ DROP TABLE lookup_type CASCADE;
 DROP TABLE lookup_behaviour_type CASCADE;
 DROP FUNCTION delete_mapping_default_action() CASCADE;
 DROP FUNCTION set_original_mapping_path() CASCADE;
-
+*/
 
 -- Table: configuration
 -- DROP TABLE configuration;
