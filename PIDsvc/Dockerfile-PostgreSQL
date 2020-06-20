@@ -1,4 +1,4 @@
-FROM postgres:latest
+FROM postgres:12
 RUN mkdir -p /docker-entrypoint-initdb.d 
 RUN apt-get update
 RUN apt-get install -y wget
