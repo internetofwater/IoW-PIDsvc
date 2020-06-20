@@ -18,7 +18,7 @@ This docker configuration includes 3 images: a postgres database, tomcat (with a
 
 
 # Deployment
-This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space and 1.5GB of RAM
+This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space and 2GB of RAM
 
 1. [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 2. [Install Docker-Compose](https://docs.docker.com/compose/install/)
