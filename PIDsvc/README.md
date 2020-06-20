@@ -30,7 +30,7 @@ This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space
 6. Pidsvc is deployed at http://localhost:8095, with GUI at http://localhost:8095/PIDSVC
 
 ## Optional: Change persistence DB
-The ```docker-compose.yml``` file configures a persistence database as a docker volume. Alternatively, you may create a directory in the host environment and map that directory to the postgres docker image data layer. See ```docker-compose-persistence-directory.yml``` for an example.
+The ```docker-compose.yml``` file configures a persistence database as a docker volume. Alternatively, you may create a directory in the host environment and map that directory to the postgres docker container persistence database. See ```docker-compose-persistence-directory.yml``` for an example.
 
 ## Optional: Enable https
 
