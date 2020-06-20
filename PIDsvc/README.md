@@ -25,7 +25,7 @@ This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space
 3. ```git clone []``` to your Server (ubuntu 18.04 LTS)
 4. Change ```POSTGRES_USER```in docker-compose ```environment:``` AND ```username``` in ```context.xml``` to your desired preference
 5. Change ```POSTGRES_PASSWORD```in docker-compose ```environment:``` AND ```password``` in ```context.xml``` to your desired preference
-4. ```docker-compose build```
+4. Move to IoW-PIDsvc/PIDsvc directory, then ```docker-compose build```
 5. ```docker-compose up --scale tomcat3=5``` One can set tomcat3=n, where n is number of pidsvc instances desired for apache to load balance to over docker internal round-robin DNS
 6. Pidsvc is deployed at http://localhost:8095, with GUI at http://localhost:8095/pidsvc
 
