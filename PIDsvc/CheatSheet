@@ -1,6 +1,0 @@
-Logging in to the docker container to do stuff
-    docker exec -it [container id or name] /bin/bash
-
-    stuff like
-    https://docs.docker.com/engine/reference/commandline/cp/
-    docker cp <containerId>:/file/path/within/container /host/path/target
