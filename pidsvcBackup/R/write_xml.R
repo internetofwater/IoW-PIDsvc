@@ -21,8 +21,8 @@ write_xml <- function(in_f, out_f, root = "https://geoconnex.us") {
 
     r <- in_d[i, ]
 
-    if(grepl("https://geoconnex.us", r$id[1])) {
-      r$id <- gsub("https://geoconnex.us", "", r$id)
+    if(grepl(root, r$id[1])) {
+      r$id <- gsub(root, "", r$id)
     }
 
     conditions <- NULL
