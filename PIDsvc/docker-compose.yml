@@ -10,6 +10,7 @@ services:
                 - POSTGRES_USER=pidsvc-admin
                 - POSTGRES_DB=pidsvc
                 - POSTGRES_PASSWORD=apassword
+            restart: always
         tomcat3:
             build:
                 context: .
@@ -19,6 +20,7 @@ services:
             expose:
                 - "8080"
                 - "8009"
+            restart: always
         apache:
             build:
                 context: .
@@ -27,5 +29,6 @@ services:
                 - tomcat3
             ports:
                 - "8095:80"
+            restart: always
 volumes:
     data_volume:
