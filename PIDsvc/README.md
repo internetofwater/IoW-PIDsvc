@@ -14,25 +14,19 @@ Implementation has taken into account findings, requirements and observations di
 https://www.seegrid.csiro.au/wiki/bin/view/SISS4BoM/PIDTechnologyReview
 https://www.seegrid.csiro.au/wiki/bin/view/SISS4BoM/PIDPrototypeSolution
 
-This docker configuration includes 3 images: a postgres database, tomcat (with a pidsvc .war for the dispatcher, API, and user interface) and apache2 as a request interceptor and load balancer. It is designed to easily allow deployment of the PIDsvc, including with load balancing for greater scalability. Scaled to 5 replicas, it has been tested to drop less than 20 of 1,000,000 requests made over 160 minutes (~1000/s).
 
 
-# Deployment
-This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space and 2GB of RAM
+# Simple Deployment
+This docker configuration includes 3 images: a postgres database, tomcat (with a pidsvc .war for the dispatcher, API, and user interface) and apache2 as a request interceptor.This assumes a machine running Ubuntu 18.04 LTS with at least 10GB of disk space and 2GB of RAM
 
 1. [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 2. [Install Docker-Compose](https://docs.docker.com/compose/install/)
 3. ```git clone []``` to your Server (ubuntu 18.04 LTS)
 4. Change ```POSTGRES_USER```in docker-compose ```environment:``` AND ```username``` in ```context.xml``` to your desired preference
 5. Change ```POSTGRES_PASSWORD```in docker-compose ```environment:``` AND ```password``` in ```context.xml``` to your desired preference
-4. Move to IoW-PIDsvc/PIDsvc directory, then ```docker-compose build```
-5. ```docker-compose up --scale tomcat3=5``` One can set tomcat3=n, where n is number of pidsvc instances desired for apache to load balance to over docker internal round-robin DNS
-6. Pidsvc is deployed at http://localhost:8095, with GUI at http://localhost:8095/pidsvc
+6. Move to IoW-PIDsvc/PIDsvc directory, then ```docker-compose build```
+7. Pidsvc is deployed at http://localhost:8095, with GUI at http://localhost:8095/pidsvc
 
-## Managing data persistence
-The ```docker-compose.yml``` file configures a persistent copy of the postgres database as a docker data volume (which can be mapped directly to other docker containers). Alternatively, you may create a directory in the host environment and map that directory to the postgres docker container persistence database. See ```docker-compose-persistence-directory.yml``` for an example.
-
-In either case, the persistent data directory must be empty, or the docker data volume removed before the first postgres image is built. After this, the data will persist int he chosen storage volume even after the docker containers are stopped and their images removed.
 
 ## Optional: Enable https
 
@@ -42,10 +36,10 @@ The most straightforward way to serve the PID service over https is to set up a 
 1. [Manual Install caddy server for Linux](https://caddyserver.com/docs/install)
 2. caddy reverse-proxy --from example.com --to localhost.IP.address:8095
 
-## Optional: Security
-1. BasicAuth implemented on virtual host, with password hashes stored on server. When BasicAuth is enabled, the GUI import/restore feature does not work. Long term, this either needs to be fixed or in production all batch mappings need to be done through the API by an authorized user/ machine.
-  * Password hashes to be stored in this configuration in /apache/.htpasswd
-  * In apache/httpd-vhosts.conf, the allowed users need to be added to the ```Require user``` directive
+# Robust deployment
+Sometimes, under many rapid requests, the database becomes overwhelmed and the PIDsvc fails. To mitigate this issue, it a more robust architecture is possible.
+
+
 
 # API Request Templates
 
