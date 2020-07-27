@@ -37,8 +37,18 @@ The most straightforward way to serve the PID service over https is to set up a 
 2. caddy reverse-proxy --from example.com --to localhost.IP.address:8095
 
 # Robust deployment
-Sometimes, under many rapid requests, the database becomes overwhelmed and the PIDsvc fails. To mitigate this issue, it a more robust architecture is possible.
+Sometimes, under many rapid requests, the database becomes overwhelmed and the PIDsvc fails. To mitigate this issue, it a more robust architecture is possible (see figure below).
 
+![deployment figure](https://user-images.githubusercontent.com/44071350/87054857-9b891780-c1d1-11ea-9d1e-c1876b65e65f.png)
+
+For this deployment use:
+
+```docker-compose up -f docker-compose-robust.yml --build --scale postgres-replica=3 -d```
+
+You can set postgres-replica=n,  where n is the number of read-only databases desired for the read-only PIDsvc to load balance to over docker internal round-robin DNS
+The write-enabled PIDsvc is deployed at http://localhost:8095, with GUI at http://localhost:8095/pidsvc. The read-only PIDsvc is accessed at http://localhost:8096 
+
+The Caddy settings require more complex routing. An example deployment including a Caddyfile is described [here](https://github.com/ksonda/geoconnex.us-1/blob/master/PIDsvc/README.md)
 
 
 # API Request Templates
