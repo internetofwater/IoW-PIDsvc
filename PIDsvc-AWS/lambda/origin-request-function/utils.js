@@ -12,10 +12,10 @@ function utils() {
 
 //helper function to generate a response with appropriate response code, URL and
 //cache-control headers
-function generateResponse(redirectUrl, statusCode = "302", age = "86400") {
+function generateResponse(redirectUrl, statusCode = "303", age = "86400") {
   const response = {
     status: statusCode,
-    statusDescription: 'Found',
+    statusDescription: 'See Other',
     headers: {
       'location': [{
         key: 'Location',
