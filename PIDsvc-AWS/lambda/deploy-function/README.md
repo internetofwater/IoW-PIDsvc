@@ -22,7 +22,7 @@ The Deploy function uses the AdmZip (https://www.npmjs.com/package/adm-zip) modu
                 region: 'us-east-1',
                 credentials: {}
             },
-            statusCodes: [301, 302],
+            statusCodes: [301, 302, 303],
             sections: ["rules", "wildcards", "querystrings"]
         }
         var service = {
