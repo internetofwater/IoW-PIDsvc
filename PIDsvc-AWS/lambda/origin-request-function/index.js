@@ -68,11 +68,11 @@ exports.handler = (event, context, callback) => {
             callback(null, utils.generateResponseqs(result.redirectRule.redirect,request.querystring,
             result.redirectRule.statusCode, maxAge));
           }
-          else {
+         else {
             callback(null, utils.generateResponse(result.redirectRule.redirect,
             result.redirectRule.statusCode, maxAge));
         }
-        else {
+        } else {
           console.log("no redirect present..:%j",request);
           callback(null, request);
         }
