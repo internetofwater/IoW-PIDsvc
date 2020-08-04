@@ -12,7 +12,7 @@ function utils() {
 
 //helper function to generate a response with appropriate response code, URL and
 //cache-control headers
-function generateResponse(redirectUrl, querystring = "", statusCode = "303", age = "300") {
+function generateResponseqs(redirectUrl, querystring = "", statusCode = "303", age = "300") {
   const response = {
     status: statusCode,
     statusDescription: 'See Other',
@@ -20,6 +20,25 @@ function generateResponse(redirectUrl, querystring = "", statusCode = "303", age
       'location': [{
         key: 'Location',
         value: redirectUrl + "?" + querystring,
+      }],
+      'cache-control': [{
+        key: 'Cache-Control',
+        value: "max-age=" + age
+      }],
+    },
+  };
+  console.log("Response generated :%j", response);
+  return response;
+}
+
+function generateResponse(redirectUrl, querystring = "", statusCode = "303", age = "300") {
+  const response = {
+    status: statusCode,
+    statusDescription: 'See Other',
+    headers: {
+      'location': [{
+        key: 'Location',
+        value: redirectUrl,
       }],
       'cache-control': [{
         key: 'Cache-Control',
