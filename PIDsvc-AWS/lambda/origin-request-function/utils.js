@@ -32,7 +32,7 @@ function generateResponseqs(redirectUrl, querystring = "", statusCode = "303", a
   return response;
 }
 
-function generateResponse(redirectUrl, querystring = "", statusCode = "303", age = "300") {
+function generateResponse(redirectUrl, statusCode = "303", age = "300") {
   const response = {
     status: statusCode,
     statusDescription: 'See Other',
