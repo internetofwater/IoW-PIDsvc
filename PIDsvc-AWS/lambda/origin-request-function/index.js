@@ -64,7 +64,12 @@ exports.handler = (event, context, callback) => {
           //calculate the Cache-Control max-age header value
           let maxAge = utils.calculateMaxAge(result.redirectRule.endTime);
           //generate response
-          callback(null, utils.generateResponse(result.redirectRule.redirect,request.querystring,
+          if (request.querystring) {
+            callback(null, utils.generateResponseqs(result.redirectRule.redirect,request.querystring,
+            result.redirectRule.statusCode, maxAge));
+          }
+          else {
+            callback(null, utils.generateResponse(result.redirectRule.redirect,
             result.redirectRule.statusCode, maxAge));
         }
         else {
