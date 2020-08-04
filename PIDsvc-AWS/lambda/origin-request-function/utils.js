@@ -59,7 +59,7 @@ function isRuleValid(startTime, endTime) {
 function calculateMaxAge(endTime) {
   //if no endtime then set max-age to 1 day(86400 sec)
   if (!endTime)
-    return 86400;
+    return 300;
   var currentDt = new Date();
   var endDt = new Date(endTime);
   return Math.round((endDt - currentDt) / 1000);
