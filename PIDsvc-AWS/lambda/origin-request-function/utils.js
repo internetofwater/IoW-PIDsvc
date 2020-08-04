@@ -12,7 +12,7 @@ function utils() {
 
 //helper function to generate a response with appropriate response code, URL and
 //cache-control headers
-function generateResponse(redirectUrl, querystring = "", statusCode = "303", age = "86400") {
+function generateResponse(redirectUrl, querystring = "", statusCode = "303", age = "300") {
   const response = {
     status: statusCode,
     statusDescription: 'See Other',
