@@ -1,6 +1,7 @@
 'use strict';
 module.exports = utils;
 utils.generateResponse = generateResponse;
+utils.generateResponseqs = generateResponseqs;
 utils.isRuleValid = isRuleValid;
 utils.calculateMaxAge = calculateMaxAge;
 
